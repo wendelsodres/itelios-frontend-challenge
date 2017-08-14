@@ -15,9 +15,10 @@ O objetivo do desafio é simples: Consumir uma json via xhttp e, com o resultado
 
 - Faça um fork deste repositório em seu GitHub
 - Adicione ao Readme uma descrição de como executar seu projeto
-- Descreva as funcionalidades do seu desafio. Por exemplo, se fez a prateleira com javascript puro, porém utilizou uma biblioteca para o carrossel, deixe isso no Readme. Se usou ES6 com um transpiler, conte isso pra gente. Venda o seu peixe! :)
+- Descreva as funcionalidades do seu desafio, venda seu peixe! Por exemplo, se fez a prateleira com javascript puro, porém utilizou uma biblioteca para o carrossel, deixe isso no Readme. Se usou ES6 com um transpiler, conte isso pra gente. 
 - Não há um limite de tempo, porém consideramos ideal não gastar mais que 8h neste desafio
-- Faça commits parciais, para que possamos acompanhar o seu desenvolvimento
+- Faça commits parciais, para que possamos acompanhar o seu desenvolvimento.
+- Em caso de dúvidas, entre em contato com flora.braz@itelios.com
 
 ## Dicas
  
