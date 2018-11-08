@@ -1,0 +1,29 @@
+{
+  "name": "wssitelios",
+  "version": "1.0.0",
+  "description": "Desafio front-end Itelios",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wendelsodres/itelios-frontend-challenge.git"
+  },
+  "keywords": [
+    "itelios",
+    "front",
+    "desafio"
+  ],
+  "author": "Wendel Sodré",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wendelsodres/itelios-frontend-challenge/issues"
+  },
+  "homepage": "https://github.com/wendelsodres/itelios-frontend-challenge#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1"
+  }
+}
