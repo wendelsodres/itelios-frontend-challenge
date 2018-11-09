@@ -59,3 +59,134 @@ body {
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
 }
+
+.container-site{
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+.prate_title{
+    font-family: 'Roboto Condensed',
+    sans-serif;
+    color: #5e6774;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.prodName{
+    height: 65px;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #303132;
+    text-align: left;
+    margin-bottom: 25px;
+}
+.oldPrice{
+    color: #5e6774;
+    height: 16px;
+    font-weight: 400; 
+    display: block;
+}
+.oldPrice strong{
+    font-weight: 700;
+    text-decoration: line-through;
+}
+.price{
+    display: block;
+    line-height: 25px;
+    color: #5e6774;
+    font-weight: 400;
+}
+.price strong {
+    font-weight: 700;
+    color: #353f4f;
+}
+.priceParce{
+    height: 20px;
+    color: #5e6774;
+    display: block;
+}
+.bx_buy{
+    width: 100%;
+    margin: 15px 0 4px 0;
+    position: relative;
+}
+.btn_buy{
+    display: block;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #d4d2d2;
+    padding: 10px 0;
+}
+
+.btn_buy::before{  
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    width: 4px;
+    height: 100%;
+    background-color: #ff6600;
+}
+.btn_buy span{
+    font-family: 'Roboto Condensed',sans-serif;
+    position: relative;
+    display: inline-block;
+    color: #353f4f;
+    font-size: .75rem;
+    font-weight: 700;
+}
+.btn_buy span::after {
+    content: '\e854';
+    font-family: 'Material Icons';
+    display: inline-block;
+    color: #ff6600;
+    margin-left: 2px;
+    position: relative;
+    top: 2px;
+}
+
+@media(min-width: 320px){
+    .box-site{
+        padding: 0 12px;
+    }
+    .prate_list{
+        width: 100%;
+    }
+    .prate_list li{
+        border: 1px solid #edeaea;
+    }
+    .prateItem{
+        width: 95%;
+        margin: 0 auto;
+        padding: 10px 0;
+    }
+    .prate_title {
+        font-size: 0.875rem;
+    }
+    .prod_visi {
+        width: 50%;
+        float: left;
+    }
+    .prod_inte{
+        width: 50%;
+        float: left;
+    }
+    .prodImage{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .prodName{
+        font-size: .75rem;
+        line-height: 16px;
+    }
+    .oldPrice{
+        font-size: .625rem;
+    }
+    .price {
+        font-size: .875rem;
+    }
+    .priceParce{
+        font-size: .6875rem;
+    }
+}
