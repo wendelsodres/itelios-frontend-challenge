@@ -51,7 +51,7 @@ img {
 }
 
 html {
-    height: 100%;
+    
 }
 
 body {
@@ -60,11 +60,97 @@ body {
     overflow-x: hidden;
 }
 
+/* slick  */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 50%;
+    margin-top: -17px;
+    font-size: 0;
+    border: 0;
+    background:none;
+    z-index: 1;
+    text-align: center;
+    line-height: 50px;
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.slick-next {
+    right: 0;
+}
+.slick-list{
+    padding-right: -1px;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    display: block;
+    font-family: 'Material Icons';
+    color: #303132;
+    font-size: 18px;
+}
+
+.slick-prev::before {
+    content: '\e908';
+    margin-right: 6px;
+}
+
+.slick-next::before {
+    content: '\e907';
+    margin-left: 8px;
+}
+
+.slick-prev.slick-disabled,
+.slick-next.slick-disabled {
+    opacity: 0.3;
+}
+.slick-slide{
+    height: auto;
+}
+
+.slick-slide img {
+    margin: 0 auto;
+}
+.slick-dots{
+    text-align: center;
+    position: relative;
+    bottom: -15px;
+}
+.slick-dots >li{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: #adadad;
+    border: 0;
+    transition: all .5s;
+    margin: 1px;
+    cursor: pointer;
+}
+.prate_list .slick-dots>li{
+    float: none;
+}
+.slick-dots>li.slick-active {
+    background-color: #353f4f;
+}
+.slick-dots>li button {
+    background: none;
+    border: 0;
+    font-size: 0;
+}
 .container-site{
     width: 100%;
     float: left;
     margin: 0;
     padding: 0;
+}
+.box_prate{
+    margin: 15px 0;
 }
 .prate_title{
     font-family: 'Roboto Condensed',
@@ -98,7 +184,7 @@ body {
     font-weight: 400;
 }
 .price strong {
-    font-weight: 700;
+    font-weight: 900;
     color: #353f4f;
 }
 .priceParce{
@@ -152,8 +238,10 @@ body {
     }
     .prate_list{
         width: 100%;
+        float: left;
     }
     .prate_list li{
+        float: left;
         border: 1px solid #edeaea;
     }
     .prateItem{
@@ -189,4 +277,82 @@ body {
     .priceParce{
         font-size: .6875rem;
     }
+}
+
+@media(min-width: 768px) {
+
+    .prate_title {
+        font-size: 1.8125rem;
+    }
+    .prod_visi {
+        width: 33%;
+    }
+
+    .prod_inte {
+        width: 66.9%;
+        float: left;
+    }
+    .prateItem {
+        width: 85%;
+    }
+    .prodName {
+        font-size: .875rem;
+        line-height: 21px;
+        margin-bottom: 30px;
+    }
+    .price {
+        font-size: 1rem;
+        line-height: 40px;        
+    }
+    .price strong {
+        font-size: 1.4375rem;
+    }
+    .prate_list .slick-dots>li {
+        margin-right: 8px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .box-site{
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+    .prod_visi{
+        width: 25%;
+    }
+    .prod_inte{
+        width: 75%;
+    }     
+    .prate_list li{
+        transition: all .5s;
+    }
+    .prate_list li:hover .bx_buy{
+        display: block;
+        visibility: visible;
+        opacity: 1;
+    }
+    .bx_buy{
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        transition: all .5s;
+    }
+    .bx_buy:hover ::before{
+        opacity: 1;       
+    }
+    .btn_buy:hover span::after {
+        opacity: 1;
+        color: #ff6600;
+    }
+    .btn_buy::before{
+        opacity: 0;
+        transition: all .5s;
+    }
+    .btn_buy span{
+        font-size: 1rem;
+    }
+    .btn_buy span::after{
+        color: #353f4f
+    }
+
 }

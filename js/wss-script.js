@@ -1,3 +1,27 @@
+//Descrição resumida
+function resumir(texto, limite) {
+
+    if (texto.length > limite) {
+        limite--;
+
+        var last = texto.substr(limite - 1, 1);
+
+        while (last != ' ' && limite > 0) {
+            limite--;
+            last = texto.substr(limite - 1, 1);
+        }
+        last = texto.substr(limite - 2, 1);
+
+        if (last == ',' || last == ';' || last == '...') {
+            texto = texto.substr(0, limite - 2) + '...';
+        } else if (last == '.' || last == '?' || last == '!') {
+            texto = texto.substr(0, limite - 1);
+        } else {
+            texto = texto.substr(0, limite - 1) + '...';
+        }
+    }
+    return texto;
+}
 
 var products = new XMLHttpRequest();
 var prodItem, prodRecommen = "";
@@ -15,7 +39,7 @@ products.onreadystatechange = function () {
                                 <div class="prodImage">
                                     <img src="${prodVisitado.imageName}" alt="${prodVisitado.name}">
                                 </div>
-                                    <h3 class="prodName">${prodVisitado.name}</h3>
+                                    <h3 class="prodName">${resumir(prodVisitado.name,80)}</h3>
                             </a>
                             <div class="prodPrice">
                                 <span class="oldPrice">De: <strong>${prodVisitado.oldPrice}</strong></span>
@@ -23,9 +47,11 @@ products.onreadystatechange = function () {
                                 <p class="priceParce">${prodVisitado.productInfo.paymentConditions}</p> 
                             </div>
 
-                            <a href="#" title="${prodVisitado.name}" class="btn_buy">
-                                <span>adicionar ao carrinho</span>
-                            </a>
+                            <div class="bx_buy">
+                                <a href="#" title="${prodVisitado.name}" class="btn_buy">
+                                    <span>adicionar ao carrinho</span>
+                                </a>
+                            </div>
 
                         </div>
                         
@@ -42,17 +68,20 @@ products.onreadystatechange = function () {
                                 <div class="prodImage">
                                     <img src="${prodRecomenda[i].imageName}" alt="${prodRecomenda[i].name}">
                                 </div>
-                                    <h3 class="prodName">${prodRecomenda[i].name}</h3>
+                                    <h3 class="prodName">${resumir(prodRecomenda[i].name,80)}</h3>
                             </a>
                             <div class="prodPrice">
-                                <span class="oldPrice">De: <strong>${prodRecomenda[i].oldPrice}</strong></span>
+                                ${prodRecomenda[i].oldPrice ? `<span class="oldPrice">De: <strong> ${prodRecomenda[i].oldPrice}</strong></span>` : `<span class="oldPrice"></span> `}
+
                                 <span class="price">Por: <strong>${prodRecomenda[i].price}</strong></span>
                                 <p class="priceParce">${prodRecomenda[i].productInfo.paymentConditions}</p> 
                             </div>
-
-                            <a href="#" title="${prodRecomenda[i].name}" class="btn_buy">
-                                <span>adicionar ao carrinho</span>
-                            </a>
+                            
+                            <div class="bx_buy">
+                                <a href="#" title="${prodRecomenda[i].name}" class="btn_buy">
+                                    <span>adicionar ao carrinho</span>
+                                </a>
+                            </div>
 
                         </div>
                         
@@ -69,3 +98,30 @@ products.onreadystatechange = function () {
 products.open("GET", "../products.json", true);
 products.send();
 
+$(function(){  
+    $('.prod_inte .prate_list').slick({
+        dots: true,
+        arrows: false,
+        infinite: false,
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 769,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 481,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+
+    });
+    
+});
