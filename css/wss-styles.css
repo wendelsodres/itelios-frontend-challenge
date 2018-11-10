@@ -326,6 +326,10 @@ body {
     .prate_list li{
         transition: all .5s;
     }
+    .prate_list >li:hover,
+    .slick-track>li:hover{
+        background-color: #fafafa;
+    }
     .prate_list li:hover .bx_buy{
         display: block;
         visibility: visible;
